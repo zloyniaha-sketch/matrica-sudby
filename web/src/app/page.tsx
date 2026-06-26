@@ -1,5 +1,6 @@
 import { MatrixCalculator } from "@/components/MatrixCalculator";
 import { MatrixBackground } from "@/components/MatrixBackground";
+import { SiteFooter } from "@/components/SiteFooter";
 
 export default function HomePage() {
   return (
@@ -68,13 +69,7 @@ export default function HomePage() {
           </section>
         </main>
 
-        <footer id="privacy" className="mt-16 border-t border-mystic-200/50 bg-white/40 px-4 py-8 text-center text-sm text-mystic-700/70 backdrop-blur-sm">
-          <p>© {new Date().getFullYear()} · Калькулятор матрицы · Не является медицинской или финансовой консультацией</p>
-          <p className="mx-auto mt-3 max-w-xl text-xs leading-relaxed text-mystic-600/80">
-            Конфиденциальность: дата рождения обрабатывается только в вашем браузере, на сервер не передаётся.
-            Статус «премиум» (демо) сохраняется локально в localStorage. Cookies и аналитика не используются.
-          </p>
-        </footer>
+        <SiteFooter />
       </div>
     </div>
   );
