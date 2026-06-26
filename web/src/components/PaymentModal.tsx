@@ -49,13 +49,14 @@ export function PaymentModal({ open, onClose, onSuccess, birthDate }: PaymentMod
           <span>
             Принимаю{" "}
             <Link href="/offer/" className="text-mystic-600 underline" target="_blank">
-              оферту
-            </Link>{" "}
-            и{" "}
+              публичную оферту
+            </Link>
+            ,{" "}
             <Link href="/privacy/" className="text-mystic-600 underline" target="_blank">
               политику конфиденциальности
             </Link>
-            . Согласен на обработку данных для оказания услуги.
+            , даю согласие на обработку персональных данных для оказания услуги и подтверждаю
+            согласие на немедленное предоставление цифрового контента после оплаты.
           </span>
         </label>
 

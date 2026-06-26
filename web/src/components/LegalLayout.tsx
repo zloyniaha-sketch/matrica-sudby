@@ -1,7 +1,15 @@
 import Link from "next/link";
 import { SiteFooter } from "@/components/SiteFooter";
 
-export function LegalLayout({ title, children }: { title: string; children: React.ReactNode }) {
+export function LegalLayout({
+  title,
+  subtitle,
+  children,
+}: {
+  title: string;
+  subtitle?: string;
+  children: React.ReactNode;
+}) {
   return (
     <div className="min-h-screen bg-[#faf7ff]">
       <header className="border-b border-mystic-200/60 bg-white/70 backdrop-blur-md">
@@ -13,6 +21,9 @@ export function LegalLayout({ title, children }: { title: string; children: Reac
       </header>
       <main className="mx-auto max-w-3xl px-4 py-10">
         <h1 className="font-display text-3xl font-bold text-mystic-950">{title}</h1>
+        {subtitle && (
+          <p className="mt-2 text-sm text-mystic-600">{subtitle}</p>
+        )}
         <article className="prose-legal mt-8 space-y-4 text-sm leading-relaxed text-mystic-900/90">
           {children}
         </article>
