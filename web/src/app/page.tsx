@@ -10,7 +10,7 @@ export default function HomePage() {
         <header className="border-b border-white/40 bg-white/30 backdrop-blur-md">
           <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
             <div className="font-display text-xl font-bold text-mystic-950">
-              ✦ Матрица Судьбы
+              ✦ Калькулятор матрицы
             </div>
             <nav className="hidden gap-6 text-sm text-mystic-800 md:flex">
               <a href="#calc" className="hover:text-mystic-600">
@@ -29,7 +29,7 @@ export default function HomePage() {
               Нумерология · 22 аркана Таро
             </p>
             <h1 className="mt-3 font-display text-4xl font-bold leading-tight text-mystic-950 md:text-5xl">
-              Рассчитай матрицу судьбы
+              Калькулятор матрицы
               <span className="block text-mystic-600">по дате рождения</span>
             </h1>
             <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-mystic-900/75">
@@ -46,7 +46,7 @@ export default function HomePage() {
             {[
               {
                 title: "Что это",
-                text: "Матрица судьбы — система самопознания по дате рождения. Числа приводятся к 22 арканам Старших Арканов Таро.",
+                text: "Нумерологический калькулятор по дате рождения. Числа приводятся к 22 арканам Старших Арканов Таро.",
               },
               {
                 title: "Что покажет",
@@ -68,8 +68,12 @@ export default function HomePage() {
           </section>
         </main>
 
-        <footer className="mt-16 border-t border-mystic-200/50 bg-white/40 py-8 text-center text-sm text-mystic-700/70 backdrop-blur-sm">
-          © {new Date().getFullYear()} · Матрица судьбы · Не является медицинской или финансовой консультацией
+        <footer id="privacy" className="mt-16 border-t border-mystic-200/50 bg-white/40 px-4 py-8 text-center text-sm text-mystic-700/70 backdrop-blur-sm">
+          <p>© {new Date().getFullYear()} · Калькулятор матрицы · Не является медицинской или финансовой консультацией</p>
+          <p className="mx-auto mt-3 max-w-xl text-xs leading-relaxed text-mystic-600/80">
+            Конфиденциальность: дата рождения обрабатывается только в вашем браузере, на сервер не передаётся.
+            Статус «премиум» (демо) сохраняется локально в localStorage. Cookies и аналитика не используются.
+          </p>
         </footer>
       </div>
     </div>

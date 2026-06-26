@@ -104,7 +104,7 @@ export function MatrixCalculator() {
         <section className="rounded-3xl border border-mystic-200/80 bg-white/80 p-6 shadow-xl shadow-mystic-200/30 backdrop-blur lg:sticky lg:top-6 lg:self-start">
           <h2 className="font-display text-2xl font-bold text-mystic-950">Рассчитать матрицу</h2>
           <p className="mt-2 text-sm leading-relaxed text-mystic-800/80">
-            Только дата рождения · методика Ладини · время не нужно
+            Только дата рождения · расчёт в браузере · время не нужно
           </p>
 
           <form onSubmit={handleSubmit} className="mt-6 space-y-4">

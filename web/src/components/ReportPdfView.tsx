@@ -148,7 +148,7 @@ export function ReportPdfView({ report, forecast }: ReportPdfViewProps) {
   return (
     <div style={styles.wrap}>
       <Page>
-        <h1 style={styles.h1}>Матрица Судьбы — персональный отчёт</h1>
+        <h1 style={styles.h1}>Калькулятор матрицы — персональный отчёт</h1>
         <p style={styles.subtitle}>Дата рождения: {report.birthDate}</p>
         <h2 style={styles.h2}>Общий синтез</h2>
         {mi.synthesisParagraphs.map((para, i) => (
@@ -293,7 +293,7 @@ export function ReportPdfView({ report, forecast }: ReportPdfViewProps) {
           <p key={i} style={styles.p}>{i + 1}. {r}</p>
         ))}
         <p style={{ ...styles.p, textAlign: "center", color: "#888", fontSize: "10px", marginTop: "24px" }}>
-          © Матрица Судьбы · Нумерологическая интерпретация для самопознания.
+          © Калькулятор матрицы · Нумерологическая интерпретация для самопознания.
           Не является медицинской, юридической или финансовой консультацией.
           Числа рассчитаны по открытой формуле матрицы (22 аркана).
         </p>
