@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Политика конфиденциальности",
   description:
     "Политика обработки персональных данных сайта «Калькулятор матрицы» в соответствии с 152-ФЗ.",
+  alternates: { canonical: "/privacy/" },
   robots: { index: true, follow: true },
 };
 

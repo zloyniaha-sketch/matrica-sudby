@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Публичная оферта",
   description:
     "Договор возмездного оказания услуг на сайте «Калькулятор матрицы». Условия оплаты и оказания цифровой услуги.",
+  alternates: { canonical: "/offer/" },
   robots: { index: true, follow: true },
 };
 

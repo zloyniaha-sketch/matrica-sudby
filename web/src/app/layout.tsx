@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { CookieBanner } from "@/components/CookieBanner";
+import { JsonLd } from "@/components/JsonLd";
+import { SITE } from "@/lib/seo";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -14,31 +16,51 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Калькулятор матрицы по дате рождения — бесплатно",
-  description:
-    "Бесплатный онлайн-калькулятор: 22 аркана, схема матрицы и расшифровка. Расчёт в браузере — дата рождения не передаётся на сервер.",
-  keywords: [
-    "калькулятор матрицы",
-    "матрица по дате рождения",
-    "матрица судьбы калькулятор",
-    "22 аркана",
-    "нумерология",
-  ],
-  openGraph: {
-    title: "Калькулятор матрицы по дате рождения",
-    description:
-      "Бесплатный онлайн-калькулятор: 22 аркана, схема и расшифровка. Данные не уходят на сервер.",
-    locale: "ru_RU",
-    type: "website",
+  metadataBase: new URL(SITE.url),
+  title: {
+    default: "Калькулятор матрицы судьбы по дате рождения — бесплатно онлайн",
+    template: "%s | Калькулятор матрицы",
   },
-  referrer: "strict-origin-when-cross-origin",
-  robots: { index: true, follow: true },
+  description: SITE.description,
+  keywords: [
+    "калькулятор матрицы судьбы",
+    "матрица судьбы рассчитать",
+    "матрица судьбы по дате рождения",
+    "матрица судьбы онлайн бесплатно",
+    "расчёт матрицы судьбы",
+    "22 аркана",
+    "нумерология по дате рождения",
+    "матрица судьбы калькулятор",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Калькулятор матрицы судьбы — бесплатный расчёт онлайн",
+    description: SITE.description,
+    locale: SITE.locale,
+    type: "website",
+    url: SITE.url,
+    siteName: SITE.name,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Калькулятор матрицы судьбы по дате рождения",
+    description: SITE.description,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-snippet": -1, "max-image-preview": "large" },
+  },
+  category: "lifestyle",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ru">
       <head>
+        <JsonLd />
         <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
         <meta httpEquiv="X-Frame-Options" content="DENY" />
         <meta
