@@ -1,8 +1,7 @@
-name: Deploy GitHub Pages
+name: Deploy GitHub Pages (backup, без оплаты)
 
+# Основной сайт с оплатой — Vercel. Этот workflow только вручную, без API-роутов не соберётся.
 on:
-  push:
-    branches: [main, master]
   workflow_dispatch:
 
 permissions:
@@ -21,7 +20,6 @@ jobs:
       run:
         working-directory: web
     env:
-      # Основной домен; переопределяется переменной CUSTOM_DOMAIN в настройках репозитория
       SITE_DOMAIN: ${{ vars.CUSTOM_DOMAIN || 'yourdestiny.tech' }}
     steps:
       - uses: actions/checkout@v4
@@ -34,12 +32,14 @@ jobs:
 
       - run: npm ci
 
-      - name: Build static site
-        run: npm run build
+      - name: Build static site (no payment API)
+        run: |
+          rm -rf src/app/api
+          npm run build
         env:
+          NEXT_PUBLIC_STATIC_EXPORT: "1"
           NEXT_PUBLIC_BASE_PATH: ""
           NEXT_PUBLIC_SITE_URL: https://${{ env.SITE_DOMAIN }}
-          NEXT_PUBLIC_YM_ID: ${{ secrets.YM_ID }}
 
       - name: Add CNAME for custom domain
         run: echo "${{ env.SITE_DOMAIN }}" > out/CNAME

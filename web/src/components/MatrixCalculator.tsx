@@ -13,7 +13,7 @@ import { PaymentModal } from "@/components/PaymentModal";
 import { BirthDateInput } from "@/components/BirthDateInput";
 import { buildFullReport } from "@/lib/report";
 import { buildTenYearForecast } from "@/lib/forecast";
-import { isPremiumUnlocked, unlockPremium, PREMIUM_PRICE } from "@/lib/premium";
+import { isPremiumUnlocked, PREMIUM_PRICE } from "@/lib/premium";
 import type { MatrixPoints } from "destiny-matrix-core";
 
 const TABS = [
@@ -87,13 +87,6 @@ export function MatrixCalculator() {
 
   function handleUnlock() {
     setPayOpen(true);
-  }
-
-  function handlePaid() {
-    if (birthDateStr) {
-      unlockPremium(birthDateStr);
-      setPremium(true);
-    }
   }
 
   const selectedValue = result && selected ? result.points[selected] : null;
@@ -378,12 +371,7 @@ export function MatrixCalculator() {
         </section>
       </div>
 
-      <PaymentModal
-        open={payOpen}
-        onClose={() => setPayOpen(false)}
-        onSuccess={handlePaid}
-        birthDate={birthDateStr}
-      />
+      <PaymentModal open={payOpen} onClose={() => setPayOpen(false)} birthDate={birthDateStr} />
     </>
   );
 }
